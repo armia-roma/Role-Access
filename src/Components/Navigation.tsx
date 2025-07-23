@@ -1,6 +1,5 @@
 import {
 	User,
-	Shield,
 	Settings,
 	Home,
 	Users,
@@ -12,7 +11,7 @@ import useAuth from "../Hooks/useAuth";
 import Button from "./Button";
 import type { UserRole } from "./RoleBadge";
 const Navigation = () => {
-	const { user, logout, hasRole, hasAnyRole } = useAuth();
+	const { user, logout, hasAnyRole } = useAuth();
 
 	const navItems = [
 		{
