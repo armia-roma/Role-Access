@@ -37,7 +37,10 @@ const LoginForm = ({ onToggleForm }: LoginFormProps) => {
 		try {
 			await login(email, password);
 		} catch (error) {
-			setErrors({ general: "error" });
+			setErrors({
+				general:
+					error instanceof Error ? error.message : "Login failed",
+			});
 		} finally {
 			setLoading(false);
 		}
